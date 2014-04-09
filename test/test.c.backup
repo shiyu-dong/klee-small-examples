@@ -1,0 +1,95 @@
+#include <klee/klee.h>
+
+int main() {
+
+  int a;
+  klee_make_symbolic(&a, sizeof(a), "a");
+  ////test0, output is 1
+  //int b = 0;
+  //return b;
+
+  //test1, output is 1
+  //int b = 0;
+  //if (a >= 0) {
+    //do nothing
+  //}
+  //return b;
+
+  //test2, output is 4?????
+  //int b = 0;
+  //if (a >= 0) {
+  //  b = 2;
+  //}
+  //return b;
+
+  ////test3, output is 4
+  //int b = 0;
+  //if (a >= 0) {
+  //  if (a < 1) {
+  //    b = 2;
+  //  }
+  //}
+  //return b;
+
+  ////test4, output 4
+  //int b = 0;
+  //if (a >= 0){
+  //  if (a < 1){
+  //    for (int i = 0; i < 100; i++) {
+  //      b++;
+  //    }
+  //  }
+  //}
+  //return b;
+
+
+  ////test5, output is 6
+  //int b = 0;
+  //if (a >= 0){
+  //  if (a < 1){
+  //    for (int i = 0; i < a; i++) {
+  //      b++;
+  //    }
+  //  }
+  //}
+  //return b;
+
+  ////test6, output is 8
+  //int b = 0;
+  //if (a >= 0){
+  //  if (a < 1){
+  //    for (int i = 0; i < a; i++) {
+  //      b++;
+  //    }
+  //    for (int i = 0; i < a; i++) {
+  //      b++;
+  //    }
+  //  }
+  //}
+  //return b;
+
+  ////test7, output is 9
+  //int b = 0;
+  //if (a >= 0){
+  //  if (a < 2){
+  //    for (int i = 0; i < a; i++) {
+  //      b++;
+  //    }
+  //  }
+  //}
+  //return b;
+
+  ////test8, output is 11
+  //int b = 0;
+  //if (a >= 0){
+  //  if (a < 2){
+  //    for (int i = 0; i < a; i++) {
+  //      b++;
+  //    }
+  //    for (int i = 0; i < a; i++) {
+  //      b++;
+  //    }
+  //  }
+  //}
+  //return b;
+}
